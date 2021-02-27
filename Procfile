@@ -1,1 +1,1 @@
-web: node --optimize_for_size --max_old_space_size=8048 index.js
+web: node --max_old_space_size=4000 index.js
