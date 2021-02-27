@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400:700&display=swap');
+
+.blog-inner {
+    margin: 0 auto;
+    max-width: 1040px;
+    width: 100%;
+    height: auto;
+}
+
+.post-full {
+    position: relative;
+    z-index: 50;
+}
+
+.post-full-header {
+    margin: 0 auto;
+    padding: 0 0 3vw;
+    max-width: 1040px;
+}
+
+.post-full-meta {
+    display: flex;
+    color: #3b3b4f;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+}
+
+.post-full-meta-date {
+    color: #3b3b4f;
+    font-size: 1rem;
+}
+
+.post-full-title {
+    margin: 0;
+    color: #0a0a23;
+    letter-spacing: 0 !important;
+}
+
+.post-full-header h1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.post-full-author-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-card {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.author-card .author-profile-image {
+    position: relative;
+    margin: 0 15px 0 0;
+    width: 60px;
+    height: 60px;
+    display: block;
+    object-fit: cover;
+    background: #d0d0d5;
+}
+
+.author-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-card-content-no-bio {
+    justify-content: center;
+}
+
+.author-card-content h4 {
+    margin-top: 0;
+}
+
+.author-card-name {
+    margin: 8px 0 2px;
+    padding: 0;
+}
+
+.author-card-name a {
+    text-decoration: none;
+    color: #1b1b32;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0 !important;
+}
+
+.post-full-image {
+    overflow: hidden;
+    background: #d0d0d5 50%;
+}
+
+.post-full-image img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: cover;
+}
+
+.post-full-content {
+    position: relative;
+    margin: 0 auto;
+    padding: 70px 150px 0;
+    min-height: 230px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400 !important;
+    line-height: 1.6em;
+    background: #fff;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 920px;
+}
+
+.post-content .paragraph-one {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}

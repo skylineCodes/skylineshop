@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.73735fac.chunk.css",
+    "main.js": "/static/js/main.b5f2a2b6.chunk.js",
+    "main.js.map": "/static/js/main.b5f2a2b6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cac60d3f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cac60d3f.js.map",
+    "static/js/2.a37e138a.chunk.js": "/static/js/2.a37e138a.chunk.js",
+    "static/js/2.a37e138a.chunk.js.map": "/static/js/2.a37e138a.chunk.js.map",
+    "static/js/3.613f1a9c.chunk.js": "/static/js/3.613f1a9c.chunk.js",
+    "static/js/3.613f1a9c.chunk.js.map": "/static/js/3.613f1a9c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.73735fac.chunk.css.map": "/static/css/main.73735fac.chunk.css.map",
+    "static/js/2.a37e138a.chunk.js.LICENSE.txt": "/static/js/2.a37e138a.chunk.js.LICENSE.txt",
+    "static/media/SkylineCode-logo-png_logo.870aaeda.png": "/static/media/SkylineCode-logo-png_logo.870aaeda.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cac60d3f.js",
+    "static/js/2.a37e138a.chunk.js",
+    "static/css/main.73735fac.chunk.css",
+    "static/js/main.b5f2a2b6.chunk.js"
+  ]
+}
