@@ -31,7 +31,7 @@ const SearchScreen = ({ match }) => {
         ) : (
           <>
             <Link to='/' className='btn btn-light'>
-              <i class='fas fa-arrow-left'></i> Go Back
+              <i className='fas fa-arrow-left'></i> Go Back
             </Link>
             <section className='new-arrivals-section'>
               {loading ? (

@@ -13,197 +13,197 @@ const BlogScreen = () => {
   const blogList = useSelector((state) => state.blogList);
   const { loading, error, posts } = blogList;
 
-  
   useEffect(() => {
+    console.log('Blog home');
     dispatch(listBlog());
   }, [dispatch]);
 
-    return (
-      <>
-        <div className='header'>
-          <div class='banner'>
-            <div class='container'>
-              <h1 class='banner-title'>
-                <span>Skyline</span> Shop
-              </h1>
-              <p>documenting our experience</p>
-              <form>
-                <input
-                  type='text'
-                  class='search-input'
-                  placeholder='search articles . . .'
-                />
-                <button type='submit' class='search-btn'>
-                  <i class='fas fa-search'></i>
-                </button>
-              </form>
+  return (
+    <>
+      <div className='header'>
+        <div className='banner'>
+          <div className='container'>
+            <h1 className='banner-title'>
+              <span>Skyline</span> Shop
+            </h1>
+            <p>documenting our experience</p>
+            <form>
+              <input
+                type='text'
+                className='search-input'
+                placeholder='search articles . . .'
+              />
+              <button type='submit' className='search-btn'>
+                <i className='fas fa-search'></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section className='design' id='design'>
+        <div className='container'>
+          <div className='title'>
+            <h2>Recent Arts & Designs</h2>
+            <p>recent arts & designs on the blog</p>
+          </div>
+
+          <div className='design-content'>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-1.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>
+                  make an awesome art portfolio for college or university
+                </a>
+              </div>
+            </div>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-2.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>make an a/#o for college or university</a>
+              </div>
+            </div>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-3.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>
+                  make an awesome art portfolio for college or university
+                </a>
+              </div>
+            </div>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-4.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>
+                  make an awesome art portfolio for college or university
+                </a>
+              </div>
+            </div>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-5.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>
+                  make an awesome art portfolio for college or university
+                </a>
+              </div>
+            </div>
+            <div className='design-item'>
+              <div className='design-img'>
+                <img src='images/art-design-6.jpg' alt='' />
+                <span>
+                  <i className='far fa-heart'></i> 22
+                </span>
+                <span>Art & Design</span>
+              </div>
+              <div className='design-title'>
+                <a href='/#'>
+                  make an awesome art portfolio for college or university
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <section class='design' id='design'>
-          <div class='container'>
-            <div class='title'>
-              <h2>Recent Arts & Designs</h2>
-              <p>recent arts & designs on the blog</p>
-            </div>
-
-            <div class='design-content'>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-1.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-2.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-3.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-4.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-5.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-              <div class='design-item'>
-                <div class='design-img'>
-                  <img src='images/art-design-6.jpg' alt='' />
-                  <span>
-                    <i class='far fa-heart'></i> 22
-                  </span>
-                  <span>Art & Design</span>
-                </div>
-                <div class='design-title'>
-                  <a href='#'>
-                    make an awesome art portfolio for college or university
-                  </a>
-                </div>
-              </div>
-            </div>
+      <section className='blog' id='blog'>
+        <div className='container'>
+          <div className='title'>
+            <h2>Latest Blog</h2>
+            <p>recent blogs about art & design</p>
           </div>
-        </section>
 
-        <section class='blog' id='blog'>
-          <div class='container'>
-            <div class='title'>
-              <h2>Latest Blog</h2>
-              <p>recent blogs about art & design</p>
-            </div>
-
-            {loading ? (
-              <Loader />
-            ) : error ? (
-              <Message variant='danger'>{error}</Message>
-            ) : (
-              <div class='blog-content'>
-                {posts.map((post) => (
-                  <div class='blog-item'>
-                    <div class='blog-img'>
-                      <img src={post.image} alt={post.title} />
-                      <span>
-                        <i class='far fa-heart'></i>
-                      </span>
-                    </div>
-                    <div class='blog-text'>
-                      <span>{post.createdAt.substring(0, 10)}</span>
-                      <h2>{post.title.substring(0, 20)}</h2>
-                      <p>{parse(post.content.substring(0, 50))}</p>
-                      <LinkContainer to={`/blog/${post._id}`}>
-                        <a href='#'>Read More</a>
-                      </LinkContainer>
-                    </div>
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant='danger'>{error}</Message>
+          ) : (
+            <div className='blog-content'>
+              {posts.map((post) => (
+                <div className='blog-item'>
+                  <div className='blog-img'>
+                    <img
+                      src={'https://api-skylineshop.herokuapp.com' + post.image}
+                      alt={post.title}
+                    />
+                    <span>
+                      <i className='far fa-heart'></i>
+                    </span>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-        <section class='about' id='about'>
-          <div class='container'>
-            <div class='about-content'>
-              <div>
-                <img src='images/about-bg.jpg' alt='' />
-              </div>
-              <div class='about-text'>
-                <div class='title'>
-                  <h2>Catherine Doe</h2>
-                  <p>art & design is my passion</p>
+                  <div className='blog-text'>
+                    <span>{post.createdAt.substring(0, 10)}</span>
+                    <h2>{post.title.substring(0, 20)}</h2>
+                    <p>{parse(post.content.substring(0, 50))}</p>
+                    <LinkContainer to={`/blog/${post._id}`}>
+                      <a href='/#'>Read More</a>
+                    </LinkContainer>
+                  </div>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  totam voluptatem saepe eius ipsum nam provident sapiente,
-                  natus et vel eligendi laboriosam odit eos temporibus impedit
-                  veritatis ut, illo deserunt illum voluptate quis beatae quod.
-                  Necessitatibus provident dicta consectetur labore!
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  corrupti natus, eos quia recusandae voluptatem veniam modi
-                  officiis minima provident rem sint porro fuga quos tempora ea
-                  suscipit vero velit sed laudantium eaque necessitatibus
-                  maxime!
-                </p>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className='about' id='about'>
+        <div className='container'>
+          <div className='about-content'>
+            <div>
+              <img src='images/about-bg.jpg' alt='' />
+            </div>
+            <div className='about-text'>
+              <div className='title'>
+                <h2>Catherine Doe</h2>
+                <p>art & design is my passion</p>
               </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                totam voluptatem saepe eius ipsum nam provident sapiente, natus
+                et vel eligendi laboriosam odit eos temporibus impedit veritatis
+                ut, illo deserunt illum voluptate quis beatae quod.
+                Necessitatibus provident dicta consectetur labore!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                corrupti natus, eos quia recusandae voluptatem veniam modi
+                officiis minima provident rem sint porro fuga quos tempora ea
+                suscipit vero velit sed laudantium eaque necessitatibus maxime!
+              </p>
             </div>
           </div>
-        </section>
-      </>
-    );
-}
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default BlogScreen;

@@ -25,14 +25,19 @@ import {
 
 export const listProducts = (keyword = '', page = '', pageSize = '') => async (
   dispatch
-) => {
+) => {  
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_LIST_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `/api/products?keyword=${keyword}&page=${page}&pageSize=${pageSize}`
+    const {
+      data,
+    } = await axios.get(
+      `/api/products?keyword=${keyword}&page=${page}&pageSize=${pageSize}`,
+      { signal: abortController.signal }
     );
 
     dispatch({
@@ -40,40 +45,49 @@ export const listProducts = (keyword = '', page = '', pageSize = '') => async (
       payload: data,
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_LIST_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_LIST_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const listProductDetails = (id) => async (dispatch) => {
+  const abortController = new AbortController();
   try {
     dispatch({
       type: PRODUCT_DETAILS_REQUEST,
     });
 
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`/api/products/${id}`, {
+      signal: abortController.signal,
+    });
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_DETAILS_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_DETAILS_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const deleteProduct = (id) => async (dispatch, getState) => {
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_DELETE_REQUEST,
@@ -89,23 +103,29 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`/api/products/${id}`, config);
+    await axios.delete(`/api/products/${id}`, config, {
+      signal: abortController.signal,
+    });
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_DELETE_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_DELETE_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const createProduct = () => async (dispatch, getState) => {
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_CREATE_REQUEST,
@@ -121,24 +141,30 @@ export const createProduct = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(`/api/products`, {}, config);
+    const { data } = await axios.post(`/api/products`, {}, config, {
+      signal: abortController.signal,
+    });
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
       payload: data
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_CREATE_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_CREATE_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const updateProduct = (product) => async (dispatch, getState) => {
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_UPDATE_REQUEST,
@@ -155,24 +181,35 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.patch(`/api/products/${product._id}`, product, config);
+    const { data } = await axios.patch(
+      `/api/products/${product._id}`,
+      product,
+      config,
+      {
+        signal: abortController.signal,
+      }
+    );
 
     dispatch({
       type: PRODUCT_UPDATE_SUCCESS,
       payload: data,
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_UPDATE_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_UPDATE_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const createProductReview = (productId, review) => async (dispatch, getState) => {
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_CREATE_REVIEW_REQUEST,
@@ -189,47 +226,51 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
       },
     };
 
-    await axios.post(
-      `/api/products/${productId}/reviews`,
-      review,
-      config
-    );
+    await axios.post(`/api/products/${productId}/reviews`, review, config, {
+      signal: abortController.signal,
+    });
 
     dispatch({
       type: PRODUCT_CREATE_REVIEW_SUCCESS
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_CREATE_REVIEW_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_CREATE_REVIEW_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };
 
 export const listTopProducts = () => async (dispatch) => {
+  const abortController = new AbortController();
+
   try {
     dispatch({
       type: PRODUCT_TOP_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `/api/products/top`
-    );
+    const { data } = await axios.get(`/api/products/top`, {
+      signal: abortController.signal,
+    });
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
       payload: data,
     });
   } catch (e) {
-    dispatch({
-      type: PRODUCT_TOP_FAIL,
-      payload:
-        e.response && e.response.data.message
-          ? e.response.data.message
-          : e.message,
-    });
+    if (!abortController.signal.aborted) {
+      dispatch({
+        type: PRODUCT_TOP_FAIL,
+        payload:
+          e.response && e.response.data.message
+            ? e.response.data.message
+            : e.message,
+      });
+    }
   }
 };

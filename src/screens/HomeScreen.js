@@ -24,7 +24,14 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products } = productList;
 
   useEffect(() => {
+    const abortController = new AbortController();
+    
+    console.log('Home')
     dispatch(listProducts(keyword, page, pageSize));
+
+    return () => {
+      abortController.abort();
+    };
   }, [dispatch, keyword, page]);
 
   return (
@@ -34,7 +41,7 @@ const HomeScreen = ({ match }) => {
         <ProductCarousel />
       ) : (
         <Link to='/' className='btn btn-light'>
-          <i class='fas fa-arrow-left'></i> Go Back
+          <i className='fas fa-arrow-left'></i> Go Back
         </Link>
       )}
       <div className='gap-element'></div>

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../config/axios';
 import {
   CREATE_BLOG_REQUEST,
   CREATE_BLOG_SUCCESS,
@@ -12,7 +12,7 @@ import {
 } from '../constants/blogConstants';
 
 export const createBlog = (blog) => async (dispatch, getState) => {
-    try {
+  try {
     dispatch({
       type: CREATE_BLOG_REQUEST,
     });
@@ -32,30 +32,26 @@ export const createBlog = (blog) => async (dispatch, getState) => {
 
     dispatch({
       type: CREATE_BLOG_SUCCESS,
-      payload: data
+      payload: data,
     });
-    } catch (e) {
-      dispatch({
-        type: CREATE_BLOG_FAIL,
-        payload:
-          e.response && e.response.data.message
-            ? e.response.data.message
-            : e.message,
-      });
-    }
+  } catch (e) {
+    dispatch({
+      type: CREATE_BLOG_FAIL,
+      payload:
+        e.response && e.response.data.message
+          ? e.response.data.message
+          : e.message,
+    });
+  }
 };
 
-export const listBlog= () => async (
-  dispatch
-) => {
+export const listBlog = () => async (dispatch) => {
   try {
     dispatch({
       type: BLOG_LIST_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `/api/blogs`
-    );
+    const { data } = await axios.get(`/api/blogs`);
 
     dispatch({
       type: BLOG_LIST_SUCCESS,

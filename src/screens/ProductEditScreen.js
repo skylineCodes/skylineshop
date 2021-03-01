@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../config/axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
@@ -62,9 +62,9 @@ const ProductEditScreen = ({ match, history }) => {
     try {
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }
+          'Content-Type': 'multipart/form-data',
+        },
+      };
 
       const { data } = await axios.post('/api/upload', formData, config);
 
@@ -74,26 +74,28 @@ const ProductEditScreen = ({ match, history }) => {
       console.error(err);
       setUploading(false);
     }
-  }
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateProduct({
-      _id: productId,
-      name,
-      price,
-      image,
-      brand,
-      category,
-      description,
-      countInStock
-    }))
+    dispatch(
+      updateProduct({
+        _id: productId,
+        name,
+        price,
+        image,
+        brand,
+        category,
+        description,
+        countInStock,
+      })
+    );
   };
 
   return (
     <>
       <Link to='/admin/productlist' className='btn btn-light my-3'>
-        <i class='fas fa-arrow-left'></i> Go Back
+        <i className='fas fa-arrow-left'></i> Go Back
       </Link>
       <FormContainer>
         <h1>Edit Product</h1>

@@ -31,7 +31,7 @@ const CartScreen = ({ match, location, history }) => {
             <Message>
               Your cart is empty{' '}
               <Link to='/'>
-                <i class='fas fa-arrow-left'></i> Go Back
+                <i className='fas fa-arrow-left'></i> Go Back
               </Link>
             </Message>
           ) : (
@@ -41,7 +41,10 @@ const CartScreen = ({ match, location, history }) => {
                   <Row>
                     <Col md={2}>
                       <Image
-                        src={item.product.image}
+                        src={
+                          'https://api-skylineshop.herokuapp.com' +
+                          item.product.image
+                        }
                         alt={item.product.name}
                         fluid
                         rounded
@@ -98,7 +101,7 @@ const CartScreen = ({ match, location, history }) => {
                   Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   ) items
                 </h2>
-                <span>&#8358;</span> {' '}
+                <span>&#8358;</span>{' '}
                 {cartItems
                   .reduce((acc, item) => acc + item.qty * item.product.price, 0)
                   .toFixed(2)}

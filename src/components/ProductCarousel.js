@@ -26,7 +26,7 @@ const ProductCarousel = () => {
           <Carousel.Item key={product._id} className='carousel'>
             <Link to={`/product/${product._id}`}>
               <Image
-                src={product.image}
+                src={'https://api-skylineshop.herokuapp.com' + product.image}
                 alt={product.name}
                 className='d-block w-100 image'
                 fluid

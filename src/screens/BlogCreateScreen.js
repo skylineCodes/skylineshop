@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../config/axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
@@ -49,7 +49,11 @@ const BlogCreateScreen = ({ match, history }) => {
         },
       };
 
-      const { data } = await axios.post('/api/upload', formData, config);
+      const { data } = await axios.post(
+        '/api/upload',
+        formData,
+        config
+      );
 
       setImage(data);
       setUploading(false);
@@ -90,14 +94,14 @@ const BlogCreateScreen = ({ match, history }) => {
       'mediaEmbed',
     ],
     ckfinder: {
-      uploadUrl: '/ckeditor/upload',
+      uploadUrl: 'https://api-skylineshop.herokuapp.com/ckeditor/upload',
     },
   };
 
   return (
     <>
       <Link to='/admin/bloglist' className='btn btn-light my-3'>
-        <i class='fas fa-arrow-left'></i> Go Back
+        <i className='fas fa-arrow-left'></i> Go Back
       </Link>
       <FormContainer>
         <h1>Create Post</h1>

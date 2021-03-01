@@ -6,7 +6,11 @@ const Product = ({ product }) => {
     return (
       <Card className='my-3 p-3 rounded product-card'>
         <Link to={`/product/${product._id}`}>
-          <Card.Img src={product.image} variant='top' height='250' />
+          <Card.Img
+            src={'https://api-skylineshop.herokuapp.com' + product.image}
+            variant='top'
+            height='250'
+          />
         </Link>
         <Card.Body className='product-text'>
           <Card.Subtitle className='text-muted'>
