@@ -14,7 +14,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
-    "ckeditor5-custom-build": "file:ckeditor5",
     "html-react-parser": "^1.2.4",
     "imagesloaded": "^4.1.4",
     "react": "^17.0.1",
