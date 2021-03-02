@@ -56,6 +56,8 @@ const BlogCreateScreen = ({ match, history }) => {
         config
       );
 
+      console.log(data)
+
       setImage(data);
       setUploading(false);
     } catch (err) {
