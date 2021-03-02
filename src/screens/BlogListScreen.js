@@ -61,7 +61,10 @@ const BlogListScreen = ({ history, match }) => {
                   <td>{post._id}</td>
                   <td>{post.title}</td>
                   <td>
-                    {'https://api-skylineshop.herokuapp.com' + post.image}
+                    <img
+                      src={'https://api-skylineshop.herokuapp.com' + post.image}
+                      alt={post.title}
+                    />
                   </td>
                   <td>{post.content}</td>
                   <td></td>

@@ -75,7 +75,6 @@ export const listBlogDetails = (id) => async (dispatch) => {
     });
 
     const { data } = await axios.get(`/api/blogs/${id}`);
-    console.log(data);
 
     dispatch({
       type: BLOG_DETAILS_SUCCESS,
