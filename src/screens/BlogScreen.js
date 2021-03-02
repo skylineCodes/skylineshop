@@ -14,7 +14,6 @@ const BlogScreen = () => {
   const { loading, error, posts } = blogList;
 
   useEffect(() => {
-    console.log('Blog home');
     dispatch(listBlog());
   }, [dispatch]);
 
