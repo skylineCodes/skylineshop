@@ -151,7 +151,7 @@ const BlogScreen = () => {
                 <div className='blog-item'>
                   <div className='blog-img'>
                     <img
-                      src={'https://api-skylineshop.herokuapp.com' + post.image}
+                      src={post.image}
                       alt={post.title}
                     />
                     <span>

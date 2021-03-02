@@ -53,7 +53,7 @@ const BlogDetailsScreen = ({ match, history }) => {
           </div>
           <figure className='post-full-image'>
             <img
-              src={'https://api-skylineshop.herokuapp.com' + post.image}
+              src={post.image}
               alt={post.title}
             />
           </figure>
