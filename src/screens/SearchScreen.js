@@ -21,7 +21,7 @@ const SearchScreen = ({ match }) => {
     const { loading, error, products, current_page, total_pages } = productList;
 
     useEffect(() => {
-      // dispatch(listProducts(keyword, page, pageSize));
+      dispatch(listProducts(keyword, page, pageSize));
     }, [dispatch, keyword, page]);
 
     return (

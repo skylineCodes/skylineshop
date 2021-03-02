@@ -29,17 +29,17 @@ const ProfileScreen = ({ location, history }) => {
   const { success } = userUpdateProfile;
 
   useEffect(() => {
-    // if (!userInfo) {
-    //   history.push('/login');
-    // } else {
-    //     if (!user.name) {
-    //         dispatch(getUserDetails('profile'));
-    //         dispatch(listMyOrders());
-    //     } else {
-    //         setName(user.name);
-    //         setEmail(user.email);
-    //     }
-    // }
+    if (!userInfo) {
+      history.push('/login');
+    } else {
+        if (!user.name) {
+            dispatch(getUserDetails('profile'));
+            dispatch(listMyOrders());
+        } else {
+            setName(user.name);
+            setEmail(user.email);
+        }
+    }
   }, [dispatch, history, userInfo, user]);
 
   const submitHandler = (e) => {

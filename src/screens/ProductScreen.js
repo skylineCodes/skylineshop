@@ -28,12 +28,12 @@ const ProductScreen = ({ history, match }) => {
     const { success: successProductReview, error: errorProductReview } = productReviewCreate;
 
     useEffect(() => {
-      // if (successProductReview) {
-      //   setRating(0);
-      //   setComment('');
-      //   dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
-      // }
-      // dispatch(listProductDetails(match.params.id));
+      if (successProductReview) {
+        setRating(0);
+        setComment('');
+        dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+      }
+      dispatch(listProductDetails(match.params.id));
     }, [dispatch, match, successProductReview]);
 
     const addToCartHandler = () => {

@@ -29,10 +29,10 @@ const BlogCreateScreen = ({ match, history }) => {
   } = blogCreate;
 
   useEffect(() => {
-    // if (successUpdate) {
-    //   dispatch({ type: CREATE_BLOG_RESET });
-    //   history.push('/admin/bloglist');
-    // }
+    if (successUpdate) {
+      dispatch({ type: CREATE_BLOG_RESET });
+      history.push('/admin/bloglist');
+    }
   });
 
   const uploadFileHandler = async (e) => {

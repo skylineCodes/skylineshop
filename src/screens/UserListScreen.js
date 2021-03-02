@@ -19,11 +19,11 @@ const UserListScreen = ({ history }) => {
     const { success:successDelete } = userDelete;
 
     useEffect(() => {
-        // if (userInfo && userInfo.isAdmin) {
-        //   dispatch(listUsers());
-        // } else {
-        //   history.push('/login');
-        // }
+        if (userInfo && userInfo.isAdmin) {
+          dispatch(listUsers());
+        } else {
+          history.push('/login');
+        }
     }, [dispatch, history, userInfo, successDelete]);
 
     const deleteHandler = (id) => {

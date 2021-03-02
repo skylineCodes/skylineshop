@@ -16,11 +16,11 @@ const BlogListScreen = ({ history, match }) => {
   const { userInfo } = userLogin;
 
   useEffect(() => {
-    // if (!userInfo.isAdmin) {
-    //   history.push('/login');
-    // }
+    if (!userInfo.isAdmin) {
+      history.push('/login');
+    }
 
-    // dispatch(listBlog());
+    dispatch(listBlog());
   }, [
     dispatch,
     history,
