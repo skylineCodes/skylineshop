@@ -8,7 +8,7 @@ import FormContainer from '../components/FormContainer';
 import {
   CKEditor,
 } from '@ckeditor/ckeditor5-react';
-import Editor from 'ckeditor5-custom-build/build/ckeditor';
+// import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { createBlog } from '../actions/blogActions';
 import { CREATE_BLOG_RESET } from '../constants/blogConstants';
 import Message from '../components/Message';
@@ -135,7 +135,7 @@ const BlogCreateScreen = ({ match, history }) => {
           <Form.Group controlId='content'>
             <Form.Label>Content</Form.Label>
             <div className='editor'>
-              <CKEditor
+              {/* <CKEditor
                 editor={Editor}
                 config={editorConfiguration}
                 onInit={(editor) => {}}
@@ -144,7 +144,7 @@ const BlogCreateScreen = ({ match, history }) => {
                   const data = editor.getData();
                   setContent(data);
                 }}
-              />
+              /> */}
             </div>
           </Form.Group>
           <div>{ content }</div>
