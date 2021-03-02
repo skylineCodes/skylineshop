@@ -1,8 +1,11 @@
 import express from 'express';
+import path from 'path';
+
+const __dirname = path.resolve();
 
 const app = express();
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(path.join(__dirname, '/')));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
