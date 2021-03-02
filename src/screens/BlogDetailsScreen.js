@@ -52,7 +52,10 @@ const BlogDetailsScreen = ({ match, history }) => {
             </section>
           </div>
           <figure className='post-full-image'>
-            <img src={post.image} alt={post.title} />
+            <img
+              src={'https://api-skylineshop.herokuapp.com' + post.image}
+              alt={post.title}
+            />
           </figure>
           <section className='post-full-content'>
             <div className='post-content'>

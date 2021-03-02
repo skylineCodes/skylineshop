@@ -10,8 +10,8 @@ app.use(express.static(path.join(__dirname, '/')));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
   app.get('*', (req, res) => {
-    // res.sendFile('index.html', { root: __dirname });
-    res.sendFile(path.join('build', 'index.html'));
+    res.sendFile('index.html', { root: __dirname });
+    // res.sendFile(path.join('build', 'index.html'));
   });
 }
 
