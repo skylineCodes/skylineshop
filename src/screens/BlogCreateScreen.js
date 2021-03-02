@@ -8,7 +8,7 @@ import FormContainer from '../components/FormContainer';
 import {
   CKEditor,
 } from '@ckeditor/ckeditor5-react';
-import Editor from 'ckeditor5-custom-build/build/ckeditor';
+// import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { createBlog } from '../actions/blogActions';
 import { CREATE_BLOG_RESET } from '../constants/blogConstants';
 import Message from '../components/Message';
