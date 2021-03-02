@@ -59,7 +59,7 @@ const BlogDetailsScreen = ({ match, history }) => {
           </figure>
           <section className='post-full-content'>
             <div className='post-content'>
-              <p>{parse(post.content)}</p>
+              {parse(post.content)}
             </div>
           </section>
         </article>
