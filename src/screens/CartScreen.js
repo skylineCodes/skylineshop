@@ -12,7 +12,7 @@ const CartScreen = ({ match, location, history }) => {
     const { cartItems } = cart;
 
     useEffect(() => {
-        dispatch(getAllCart());
+        // dispatch(getAllCart());
     }, [dispatch]);
 
     const removeFromCartHandler = (id) => {

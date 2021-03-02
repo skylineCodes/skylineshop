@@ -29,13 +29,13 @@ const LoginScreen = ({ location, history }) => {
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
   useEffect(() => {
-    if (userInfoRegister) {
-      history.push(redirect);
-    }
+    // if (userInfoRegister) {
+    //   history.push(redirect);
+    // }
 
-    if (userLoginInfo) {
-      history.push(redirect);
-    }
+    // if (userLoginInfo) {
+    //   history.push(redirect);
+    // }
   }, [history, userInfoRegister, userLoginInfo, redirect]);
 
   const submitLoginHandler = (e) => {

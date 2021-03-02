@@ -34,25 +34,25 @@ const CarouselSlide = () => {
   };
 
   useEffect(() => {  
-    if (success) {
-      const handleKeyDown = (e) => {
-        if (e.keyCode === 39) {
-          onArrowClick('right');
-        }
+    // if (success) {
+    //   const handleKeyDown = (e) => {
+    //     if (e.keyCode === 39) {
+    //       onArrowClick('right');
+    //     }
 
-        if (e.keyCode === 37) {
-          onArrowClick('left');
-        }
-      };
+    //     if (e.keyCode === 37) {
+    //       onArrowClick('left');
+    //     }
+    //   };
       
-      window.addEventListener('keydown', handleKeyDown);
+    //   window.addEventListener('keydown', handleKeyDown);
       
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-      };
-    }
+    //   return () => {
+    //     window.removeEventListener('keydown', handleKeyDown);
+    //   };
+    // }
     
-    dispatch(listTopProducts());
+    // dispatch(listTopProducts());
   }, [dispatch, success]);
 
   return loading ? (

@@ -24,14 +24,13 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products } = productList;
 
   useEffect(() => {
-    const abortController = new AbortController();
+    // const abortController = new AbortController();
     
-    console.log('Home')
-    dispatch(listProducts(keyword, page, pageSize));
+    // dispatch(listProducts(keyword, page, pageSize));
 
-    return () => {
-      abortController.abort();
-    };
+    // return () => {
+    //   abortController.abort();
+    // };
   }, [dispatch, keyword, page]);
 
   return (

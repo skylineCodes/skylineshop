@@ -15,7 +15,7 @@ const BlogDetailsScreen = ({ match, history }) => {
   const { post, loading, error } = blogDetails;
 
   useEffect(() => {
-    dispatch(listBlogDetails(blogId));
+    // dispatch(listBlogDetails(blogId));
   }, [dispatch, blogId]);
 
   return loading ? (

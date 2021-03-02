@@ -19,7 +19,7 @@ const Header = () => {
   const { cartItems } = cart;
 
   useEffect(() => {
-    dispatch(getAllCart());
+    // dispatch(getAllCart());
   }, [dispatch]);
 
   const userLogin = useSelector(state => state.userLogin);
